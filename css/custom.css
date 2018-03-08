@@ -1,0 +1,41 @@
+:root {
+	--color-background: #2d3238;
+	--color-text: #f9ffee;
+	--color-headers: #efbb35;
+	--color-highlight: #f59bac;
+}
+body {
+	background: var(--color-background);
+	background-color: var(--color-background);
+}
+::selection {
+	background: var(--color-highlight);
+}
+
+::-moz-selection {
+	background: var(--color-highlight);
+}
+.reveal {
+	color: var(--color-text);
+}
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+	color: var(--color-headers);
+}
+.reveal pre {
+	box-shadow: none;
+}
+.reveal .controls,
+.reveal .progress {
+	color: var(--color-highlight);
+}
+.reveal pre code.full-height {
+	max-height: none;
+}
+.talk-section-header {
+	text-decoration: underline;
+}
