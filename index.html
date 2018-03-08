@@ -39,7 +39,10 @@
 						<h2>What is CSS Grid Layout?</h2>
 
 						<aside class="notes">
-							<p>CSS Grid is a specification that allows you to create 2-dimensional layouts in CSS, meaning that you have control over both columns and rows.</p>
+							<ul>
+								<li>CSS Grid Layout is a specification that introduces a two-dimensional grid system to CSS.</li>
+								<li>Grids can be used to layout major page areas or small user interface elements.</li>
+							</ul>
 						</aside>
 					</section>
 					<section>
@@ -57,119 +60,10 @@
 						</aside>
 					</section>
 				</section>
-				<!-- The Basics -->
+				<!-- Key Concepts and Terminology -->
 				<section>
 					<section>
-						<p><small class="talk-section-header">The Basics</small></p>
-						<h2>A Simple Grid</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Now that we've touched on what CSS Grid is, let's go over a basic example to see it in action.</li>
-								<li>Then we'll move on and cover some of the key terminology before digging any deeper.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>HTML</h4>
-						<pre>
-							<code class="html">
-	<div class="container">
-		<div class="item item1">1</div>
-		<div class="item item2">2</div>
-		<div class="item item3">3</div>
-		<div class="item item4">4</div>
-		<div class="item item5">5</div>
-		<div class="item item6">6</div>
-		<div class="item item7">7</div>
-		<div class="item item8">8</div>
-	</div>
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>This is the markup we'll be using. Nothing special just a container div with a set of child div elements.</li>
-								<li>Note that your markup does not need to be written this way, I just did so for the sake of simplicity.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we're setting the outer div element as the grid container by simply setting it's `display` property to "grid".</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-
-						<img src="images/simple-grid-01.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Now, all of the child "div" elements are "grid items" of the container.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<img src="images/rick-and-morty-unimpressed.gif" alt="Unimpressed">
-
-						<aside class="notes">
-							<ul>
-								<li>OK, not that impressive just yet.</li>
-								<li>That's because simply setting `display: grid;` on a container doesn't do much in and of itself. You still need to slice up the container into columns and rows, as we previously discussed in the last section.</li>
-								<li>So let's do that.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-template-rows: 200px 200px;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we've set up 4 columns of 200px wide and 2 rows of 200px in height.</li>
-								<li>We've set the space between our rows and columns to be 20px, with the `grid-gap` rule.</li>
-								<li>We'll cover more on these terms a bit later - for now, just note that we're setting these definitions all on the parent container - we've not touched the child elements at all.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/simple-grid-02.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Much better. And not too bad for just 4 lines of CSS!</li>
-								<li>But thre's still room for improvement. For example, how do we get the items to take up the full space? Calculate percentages?</li>
-								<li>First let's cover some key terminology of the specification</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				<!-- Digging A Little Deeper -->
-				<section>
-					<section>
-						<p><small class="talk-section-header">Digging A Little Deeper</small></p>
+						<!--<p><small class="talk-section-header">Digging A Little Deeper</small></p>-->
 						<h2>Key Concepts and Terminology</h2>
 
 						<aside class="notes">
@@ -185,7 +79,7 @@
 						<aside class="notes">
 							<ul>
 								<li>A "grid container" is the element that holds the entire CSS grid</li>
-								<li>It will be the element that has been set to `display: grid` or `display: inline-grid`.</li>
+								<li>It will be the element that has been set to `display: grid`.</li>
 							</ul>
 						</aside>
 					</section>
@@ -286,11 +180,78 @@
 						</aside>
 					</section>
 				</section>
+				<!-- Properties -->
+				<section>
+					<section>
+						<h2>Properties</h2>
+
+						<aside class="notes">
+							<ul>
+								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
+								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>grid-template-columns & grid-template-rows</h4>
+					
+						<pre>
+							<code class="css">
+	.container {
+		display: grid;
+		grid-template-columns: 200px 200px 200px 200px;
+		grid-template-rows: 200px 200px;
+	}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>The `grid-template-columns` property defines the line names and track sizing functions of the grid columns.</li>
+								<li>While the `grid-template-rows` property defines the line names and track sizing functions of the grid rows.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h2>Properties</h2>
+						<ul>
+							<li>grid-template-columns / grid-template-rows</li>
+							<li>grid-auto-columns / grid-auto-rows</li>
+							<li>grid-column-start / grid-column-end</li>
+							<li>grid-row-start / grid-row-end</li>
+							<li>grid-column / grid-row</li>
+							<li>grid-template-areas</li>
+							<li>grid-area</li>
+							<li>grid-gap</li>
+							<li>grid</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
+								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties:
+									<ol>
+										<li>defines the line names and track sizing functions of the grid columns or rows.</li>
+										<li>specifies the size of an implicitly-created grid column or row track.</li>
+										<li>specifies a grid item’s start and end position, respectively, within the grid column.</li>
+										<li>specifies a grid item’s start and end position, respectively, within the grid row.</li>
+										<li>shorthand properties for grid-column-start / grid-column-end and grid-row-start / grid-row-end specifying a grid item's size and location within the grid row or column.</li>
+										<li>specifies named grid areas.</li>
+										<li>shorthand property for grid-row-start, grid-column-start, grid-row-end and grid-column-end, specifying a grid item’s size and location within the grid row or column.</li>
+										<li>a shorthand property for grid-row-gap and grid-column-gap.</li>
+										<li>a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.</li>
+									</ol>
+								</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
 				<!-- New Units and Notations -->
 				<section>
 					<section>
-						<p><small class="talk-section-header">New Units and Notations</small></p>
-						<h2>FR and repeat()</h2>
+						<!--<p><small class="talk-section-header">New Units and Notations</small></p>-->
+						<!--<h2>FR and repeat()</h2>-->
+						<h2>New Units and Notations</h2>
 
 						<aside class="notes">
 							<ul>
@@ -396,38 +357,111 @@
 						</aside>
 					</section>
 				</section>
-				<!-- Properties -->
+				<!-- The Basics -->
 				<section>
 					<section>
-						<h2>Properties</h2>
-						<ul>
-							<li>grid-template-columns / grid-template-rows</li>
-							<li>grid-auto-columns / grid-auto-rows</li>
-							<li>grid-column-start / grid-column-end</li>
-							<li>grid-row-start / grid-row-end</li>
-							<li>grid-column / grid-row</li>
-							<li>grid-template-areas</li>
-							<li>grid-area</li>
-							<li>grid-gap</li>
-							<li>grid</li>
-						</ul>
+						<!--<p><small class="talk-section-header">The Basics</small></p>-->
+						<h2>A Simple Grid</h2>
 
 						<aside class="notes">
 							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties:
-									<ol>
-										<li>defines the line names and track sizing functions of the grid columns or rows.</li>
-										<li>specifies the size of an implicitly-created grid column or row track.</li>
-										<li>specifies a grid item’s start and end position, respectively, within the grid column.</li>
-										<li>specifies a grid item’s start and end position, respectively, within the grid row.</li>
-										<li>shorthand properties for grid-column-start / grid-column-end and grid-row-start / grid-row-end specifying a grid item's size and location within the grid row or column.</li>
-										<li>specifies named grid areas.</li>
-										<li>shorthand property for grid-row-start, grid-column-start, grid-row-end and grid-column-end, specifying a grid item’s size and location within the grid row or column.</li>
-										<li>a shorthand property for grid-row-gap and grid-column-gap.</li>
-										<li>a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.</li>
-									</ol>
-								</li>
+								<li>Now that we've touched on what CSS Grid is, let's go over a basic example to see it in action.</li>
+								<li>Then we'll move on and cover some of the key terminology before digging any deeper.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>HTML</h4>
+						<pre>
+							<code class="html">
+	<div class="container">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+		<div class="item item4">4</div>
+		<div class="item item5">5</div>
+		<div class="item item6">6</div>
+		<div class="item item7">7</div>
+		<div class="item item8">8</div>
+	</div>
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>This is the markup we'll be using. Nothing special just a container div with a set of child div elements.</li>
+								<li>Note that your markup does not need to be written this way, I just did so for the sake of simplicity.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>CSS</h4>
+						<pre>
+							<code class="css">
+	.container {
+		display: grid;
+	}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>Here, we're setting the outer div element as the grid container by simply setting it's `display` property to "grid".</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>Result</h4>
+
+						<img src="images/simple-grid-01.png" alt="A simple grid">
+
+						<aside class="notes">
+							<ul>
+								<li>Now, all of the child "div" elements are "grid items" of the container.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<img src="images/rick-and-morty-unimpressed.gif" alt="Unimpressed">
+
+						<aside class="notes">
+							<ul>
+								<li>OK, not that impressive just yet.</li>
+								<li>That's because simply setting `display: grid;` on a container doesn't do much in and of itself. You still need to slice up the container into columns and rows, as we previously discussed in the last section.</li>
+								<li>So let's do that.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>CSS</h4>
+						<pre>
+							<code class="css">
+	.container {
+		display: grid;
+		grid-template-columns: 200px 200px 200px 200px;
+		grid-template-rows: 200px 200px;
+		grid-gap: 20px;
+	}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>Here, we've set up 4 columns of 200px wide and 2 rows of 200px in height.</li>
+								<li>We've set the space between our rows and columns to be 20px, with the `grid-gap` rule.</li>
+								<li>We'll cover more on these terms a bit later - for now, just note that we're setting these definitions all on the parent container - we've not touched the child elements at all.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>Result</h4>
+						<img src="images/simple-grid-02.png" alt="A simple grid">
+
+						<aside class="notes">
+							<ul>
+								<li>Much better. And not too bad for just 4 lines of CSS!</li>
+								<li>But thre's still room for improvement. For example, how do we get the items to take up the full space? Calculate percentages?</li>
+								<li>First let's cover some key terminology of the specification</li>
 							</ul>
 						</aside>
 					</section>
