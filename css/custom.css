@@ -39,3 +39,13 @@ body {
 .talk-section-header {
 	text-decoration: underline;
 }
+
+.reveal .split img {
+	max-width: 75%;
+}
+.reveal .split pre {
+	font-size: 0.35em;
+}
+.line-highlight {
+	background-color: rgba( 0,0,0,0.2 );
+}

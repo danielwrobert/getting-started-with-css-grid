@@ -34,8 +34,8 @@
 				</section>
 				<!-- Introduction -->
 				<section>
-					<section data-external="slides/introduction/index_01.html"> </section>
-					<section data-external="slides/introduction/index_02.html"> </section>
+					<section data-external="slides/introduction/index.html"> </section>
+					<section data-external="slides/introduction/grid-example.html"> </section>
 				</section>
 				<!-- Terminology -->
 				<section>
@@ -46,81 +46,17 @@
 					<section data-external="slides/terminology/grid-tracks.html"> </section>
 					<section data-external="slides/terminology/grid-gutter.html"> </section>
 					<section data-external="slides/terminology/grid-area.html"> </section>
-
-					<section>
-						<h4>Implicit vs Explicit Tracks</h4>
-						<div>
-							<pre>
-								<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-gap: 20px;
-	}
-								</code>
-							</pre>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Understanding how Implicit and Explicit grid/tracks work is a part of the fundamental understanding of CSS Grid.</li>
-								<li>If you do not explicitly define a tracks, they are implicit - meaning that the browser will automatically fill in the remaining items that do not fit in to the defined tracks.</li>
-								<li>In this example, we have explicitly defined our columns but we have not defined the rows, so they will be implicit.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Implicit vs Explicit Tracks</h4>
-						<img src="images/terminology/explicit-vs-implicit.png" alt="Implicit Rows">
-
-						<aside class="notes">
-							<ul>
-								<li>Here you can see our 4 explicitly defined columns.</li>
-								<li>If we did not explicitly define our columns, we would have 1 column and the width would expand to 100% of the container, as you saw in our initial example.</li>
-								<li>Once the defined columns are filled, the browser needs to put the remaining items somewhere so it will wrap them around, respecting the column definition, and fill them in as rows.</li>
-								<li>Even though we did not define any rows, they will be implicitly created.</li>
-								<li>Similarly, if you do define a set of grid rows, the grid extra items will fill themselves in automatically after they take up the space in the rows that have been explicitly defined.</li>
-							</ul>
-						</aside>
-					</section>
+					<section class="split" data-external="slides/terminology/implicit-explicit.html"> </section>
 				</section>
 				<!-- Properties -->
 				<section>
-					<section>
-						<h2>Properties</h2>
+					<section data-external="slides/syntax/index.html"> </section>
+					<section data-external="slides/syntax/template-columns-rows.html"> </section>
+					<section data-external="slides/syntax/auto-columns-rows.html"> </section>
 
-						<aside class="notes">
-							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>grid-template-columns & grid-template-rows</h4>
-					
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-template-rows: 200px 200px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>The `grid-template-columns` property defines the line names and track sizing functions of the grid columns.</li>
-								<li>While the `grid-template-rows` property defines the line names and track sizing functions of the grid rows.</li>
-							</ul>
-						</aside>
-					</section>
 					<section>
 						<h2>Properties</h2>
 						<ul>
-							<li>grid-template-columns / grid-template-rows</li>
-							<li>grid-auto-columns / grid-auto-rows</li>
 							<li>grid-column-start / grid-column-end</li>
 							<li>grid-row-start / grid-row-end</li>
 							<li>grid-column / grid-row</li>
@@ -135,8 +71,6 @@
 								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
 								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties:
 									<ol>
-										<li>defines the line names and track sizing functions of the grid columns or rows.</li>
-										<li>specifies the size of an implicitly-created grid column or row track.</li>
 										<li>specifies a grid item’s start and end position, respectively, within the grid column.</li>
 										<li>specifies a grid item’s start and end position, respectively, within the grid row.</li>
 										<li>shorthand properties for grid-column-start / grid-column-end and grid-row-start / grid-row-end specifying a grid item's size and location within the grid row or column.</li>
