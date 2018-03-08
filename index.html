@@ -34,115 +34,19 @@
 				</section>
 				<!-- Introduction -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Introduction</small></p>
-						<h2>What is CSS Grid Layout?</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>CSS Grid Layout is a specification that introduces a two-dimensional grid system to CSS.</li>
-								<li>Grids can be used to layout major page areas or small user interface elements.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<img src="images/grid-basics.png" alt="A grid">
-
-						<aside class="notes">
-							<ul>
-								<li>The idea behind a grid is that you take an element on your page and set it as the "grid container".</li>
-								<li>From there, you can slice up that container's contents into actual grid areas.</li>
-								<li>Once you have your grid set and sliced, you can take the "grid items" (children elements to the container) and place them anywhere in the grid using the areas you've defined.</li>
-								<li>You can do this without any need for positioning rules that we needed to rely on in the past (top, bottom, right, left, absolute, etc.).</li>
-								<li>Much like Flexbox, the whole concept behind CSS Grid is all about the relationship between the container and the items.</li>
-								<li>When you set an element to `display: grid;`, you automatically make all of it's direct children "grid items" of that container. The children items are not explicitly set as grid items - there is no `display: grid-item;` rule. This just happens automatically when the direct parent is set to `display: grid;`.</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/introduction/index_01.html"> </section>
+					<section data-external="slides/introduction/index_02.html"> </section>
 				</section>
-				<!-- Key Concepts and Terminology -->
+				<!-- Terminology -->
 				<section>
-					<section>
-						<!--<p><small class="talk-section-header">Digging A Little Deeper</small></p>-->
-						<h2>Key Concepts and Terminology</h2>
+					<section data-external="slides/terminology/index.html"> </section>
+					<section data-external="slides/terminology/grid-container.html"> </section>
+					<section data-external="slides/terminology/grid-item.html"> </section>
+					<section data-external="slides/terminology/grid-lines.html"> </section>
+					<section data-external="slides/terminology/grid-tracks.html"> </section>
+					<section data-external="slides/terminology/grid-gutter.html"> </section>
+					<section data-external="slides/terminology/grid-area.html"> </section>
 
-						<aside class="notes">
-							<ul>
-								<li>The first couple of terms we'll have touched on in our intro but I'll mention them again as a bit of a recap.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Container</h4>
-						<img src="images/terminology/grid-container.jpg" alt="Grid Container">
-
-						<aside class="notes">
-							<ul>
-								<li>A "grid container" is the element that holds the entire CSS grid</li>
-								<li>It will be the element that has been set to `display: grid`.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Item</h4>
-						<img src="images/terminology/grid-item.jpg" alt="Grid Item">
-
-						<aside class="notes">
-							<ul>
-								<li>A "grid item" any element that is a direct child of a "grid container".</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Lines</h4>
-						<img src="images/terminology/grid-lines.jpg" alt="Grid Lines">
-
-						<aside class="notes">
-							<ul>
-								<li>The vertical and horizontal lines that divide the grid and separate the columns and rows.</li>
-								<li>Grid lines are numbered left to right and top to bottom.</li>
-								<li>They respect the language direction, so if you're coming from an RLT language, they will also be numbered accordingly.</li>
-								<li>Tracks are not numbered by the actual column itself, but by the lines that start and stop them. Because of that, you'll always have one more line number than you actually have column or row.'</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Tracks</h4>
-						<img src="images/terminology/grid-tracks.jpg" alt="Grid Tracks">
-
-						<aside class="notes">
-							<ul>
-								<li>The space between two grid lines.</li>
-								<li>The vertical tracks are referred to as grid columns and are defined useing the `grid-template-columns` property.</li>
-								<li>The horizontal tracks are referred to as grid rows and are defined useing the `grid-template-rows` property.</li>
-								<li>The two are collectively referred to as grid tracks.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Gutter</h4>
-						<img src="images/terminology/grid-gutter.jpg" alt="Grid Gutter">
-
-						<aside class="notes">
-							<ul>
-								<li>The space between the rows and columns in a grid.</li>
-								<li>You can space out your grid by creating gutters with the `grid-gap` property.</li>
-								<li>Setting `grid-gap: 20px`, for example, will add 20px of spacing around your tracks - which is what you saw in the previous example.</li>
-								<li>Similar to margins.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Area</h4>
-						<img src="images/terminology/grid-area.jpg" alt="Grid Area">
-
-						<aside class="notes">
-							<ul>
-								<li>Rectangular space surrounded by four grid lines.</li>
-								<li>A grid area can contain any number of grid cells/items.</li>
-							</ul>
-						</aside>
-					</section>
 					<section>
 						<h4>Implicit vs Explicit Tracks</h4>
 						<div>
@@ -808,7 +712,8 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } }
 				]
 			});
 			// Shows the slide number using default formatting
