@@ -1,0 +1,23 @@
+<h3>Why tables are bad for layout</h3>
+
+<ul>
+	<li class="fragment">HTML tables were designed for tabular data</li>
+	<li class="fragment">Using tables for layout is not accessible</li>
+	<li class="fragment">Complex markup structures result in more difficult maintainability and debugging</li>
+	<li class="fragment">Tables are not responsive by default</li>
+</ul>
+
+<aside class="notes">
+	<ul>
+		<li>There are a few main reasons why you shouldn't use HTML tables for layouts and why CSS Grid is different:
+			<ul>
+				<li>HTML tables were designed for tabular data. Early on, people used them as a hack because CSS support across browsers was very poor.</li>
+				<li>Using tables for layout reduces accessibility for visually impaired users - the output from screen-readers tends to be confusing for users because of the more complex markup.</li>
+				<li>Because the markup structures tend to be more complex than proper layout techniques, this can result in the code that is harder to maintain, and debug.</li>
+				<li>Lastly, tables are not automatically responsive: Proper layout containers default to 100% of the width of their parent element.</li>
+				<li>Tables on the other hand are sized according to their content by default.</li>
+				<li>Because of this, extra measures are needed to get a table-based layout to work across devices.</li>
+			</ul>
+		</li>
+	</ul>
+</aside>
