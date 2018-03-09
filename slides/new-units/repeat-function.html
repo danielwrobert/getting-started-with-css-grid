@@ -1,0 +1,21 @@
+<h4>The repeat() Function</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: repeat(4, 1fr);</mark>
+	grid-gap: 20px;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>We can improve on this further with the repeat() notation.</li>
+		<li>Instead of repeating the same value over and over, we are now wrapping that value in repeat().</li>
+		<li>The second value of repeat() is the value that you want repeated.</li>
+		<li>The first value of repeat() is the number of times you want to repeat that value.</li>
+		<li>This allows a recurring pattern to be written in a more compact form, as you see here.</li>
+	</ul>
+</aside>
