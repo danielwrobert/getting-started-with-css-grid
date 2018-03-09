@@ -1,0 +1,32 @@
+<h4>Container Properties</h4>
+<p><small><code>grid-column-gap</code> & <code>grid-row-gap</code></small></p>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	grid-template-columns: 200px 200px 200px 200px;
+	<mark class="line-highlight">grid-column-gap: 10px;</mark>
+	<mark class="line-highlight">grid-row-gap: 15px;</mark>
+}
+	</code>
+</pre>
+
+<p><small>Shorthand: <code>grid-gap</code></small></p>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	grid-template-columns: 200px 200px 200px 200px;
+	<mark class="line-highlight">grid-gap: 10px;</mark>
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>Specifies the size of the grid lines, setting the width of the gutters between the columns/rows.</li>
+		<li>A shorthand for `grid-row-gap` and `grid-column-gap`.</li>
+	</ul>
+</aside>

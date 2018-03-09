@@ -1,11 +1,11 @@
 <h4>Implicit vs Explicit Tracks</h4>
 	<pre>
-		<code class="css">
+		<code class="css line-numbers" data-trim data-noescape>
 /* CSS */
 .container {
-display: grid;
-grid-template-columns: 200px 200px 200px 200px;
-grid-gap: 20px;
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: 200px 200px 200px 200px;</mark>
+	grid-gap: 15px;
 }
 		</code>
 	</pre>
@@ -16,7 +16,7 @@ grid-gap: 20px;
 		<li>Understanding how Implicit and Explicit grid/tracks work is a part of the fundamental understanding of CSS Grid.</li>
 		<li>If you do not explicitly define a track, it will be implicit - meaning that the browser will automatically fill in the remaining items that do not fit in to the defined tracks.</li>
 		<li>Here, we've explicitly defined 4 columns.</li>
-		<li>If we did not define them, we would have 1 column and the width would expand to 100% of the container<./li>
+		<li>If we did not define them, we would have 1 column and the width would expand to 100% of the container.</li>
 		<li>Once the defined columns are filled, the browser needs to put the remaining items somewhere so it will wrap them around, respecting the column definition, and fill them in as rows.</li>
 		<li>Even though we did not define any rows, they will be implicitly created.</li>
 		<li>Similarly, if you do define a set of grid rows, the grid extra items will fill themselves in automatically after they take up the space in the rows that have been explicitly defined.</li>

@@ -37,6 +37,12 @@
 					<section data-external="slides/introduction/index.html"> </section>
 					<section data-external="slides/introduction/grid-example.html"> </section>
 				</section>
+				<!-- Grid vs. Flexbox -->
+				<section>
+					<section data-external="slides/grid-vs-flexbox/index.html"> </section>
+					<section data-external="slides/grid-vs-flexbox/flexbox-comparison.html"> </section>
+				</section>
+
 				<!-- Terminology -->
 				<section>
 					<section data-external="slides/terminology/index.html"> </section>
@@ -50,155 +56,20 @@
 				</section>
 				<!-- Properties -->
 				<section>
-					<section data-external="slides/syntax/index.html"> </section>
-					<section data-external="slides/syntax/template-columns-rows.html"> </section>
-					<section data-external="slides/syntax/auto-columns-rows.html"> </section>
-
-					<section>
-						<h2>Properties</h2>
-						<ul>
-							<li>grid-column-start / grid-column-end</li>
-							<li>grid-row-start / grid-row-end</li>
-							<li>grid-column / grid-row</li>
-							<li>grid-template-areas</li>
-							<li>grid-area</li>
-							<li>grid-gap</li>
-							<li>grid</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties:
-									<ol>
-										<li>specifies a grid item’s start and end position, respectively, within the grid column.</li>
-										<li>specifies a grid item’s start and end position, respectively, within the grid row.</li>
-										<li>shorthand properties for grid-column-start / grid-column-end and grid-row-start / grid-row-end specifying a grid item's size and location within the grid row or column.</li>
-										<li>specifies named grid areas.</li>
-										<li>shorthand property for grid-row-start, grid-column-start, grid-row-end and grid-column-end, specifying a grid item’s size and location within the grid row or column.</li>
-										<li>a shorthand property for grid-row-gap and grid-column-gap.</li>
-										<li>a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.</li>
-									</ol>
-								</li>
-							</ul>
-						</aside>
-					</section>
+					<!-- Container Properties -->
+					<section data-external="slides/properties/index.html"> </section>
+					<section data-external="slides/properties/template-columns-rows.html"> </section>
+					<section data-external="slides/properties/auto-columns-rows.html"> </section>
+					<section data-external="slides/properties/grid-gap.html"> </section>
+					<section class="split" data-external="slides/properties/template-areas.html"> </section>
+					<!-- Item Properties -->
+					<section data-external="slides/properties/column-start-end.html"> </section>
+					<section data-external="slides/properties/row-start-end.html"> </section>
 				</section>
-				<!-- New Units and Notations -->
+				<!-- Basic Example -->
 				<section>
 					<section>
-						<!--<p><small class="talk-section-header">New Units and Notations</small></p>-->
-						<!--<h2>FR and repeat()</h2>-->
-						<h2>New Units and Notations</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Along with CSS Grid Layout, comes a couple of really helpful new units and notations:</li>
-								<li>The FR Unit and the repeat() function.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>The FR Unit</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Fr is a new unit of length, which is short for “fraction” or "fractal unit".</li>
-								<li>MDN defines it as a unit which represents a fraction of the available space in the grid container.</li>
-								<li>In this example, we've re-written the `grid-template-colums` to use the fr unit instead of absolute pixel units (which aren't very flexible in this case).</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>The repeat() Function</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>We can improve on this further with the repeat() notation.</li>
-								<li>Instead of repeating the same value over and over, we are now wrapping that value in repeat().</li>
-								<li>The second value of repeat() is the value that you want repeated.</li>
-								<li>The first value of repeat() is the number of times you want to repeat that value.</li>
-								<li>This allows a recurring pattern to be written in a more compact form, as you see here.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<small>Before: Pixel Units</small>
-						<img src="images/simple-grid-02.png" alt="Pixel Units">
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the result from our earlier example where the grid items are not stretching the full-width of the container.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<small>After: Fr and repeat()</small>
-						<img src="images/fr-and-repeat.png" alt="Fr and Repeat">
-
-						<aside class="notes">
-							<ul>
-								<li>After we replace the pixel values with a more flexible `fr` unit, we see that the grid now takes up the full width of the container.</li>
-								<li>What's happeining here is the `fr` units are telling the grid to fill in all of the available space with 4 evenly spaced columns.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Mixing Units</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: repeat(2, 150px) 1fr;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>You don't have to stick with one measurement unit for your track definitions.</li>
-								<li>You can, for example, mix pixels with the fr unit, like you see here. This can be handy if you want to have part of your grid take up a set amount of space and the rest of the grid to flex around it.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/mixing-units.png" alt="Mixing Units">
-
-						<aside class="notes">
-							<ul>
-								<li>The way this is calculated is the pixel values (the set/absolute space) are calculated first and then the items using `fr` are divided up with the remaining space. Another way to look at it is to think of `fr` as "Free Space", where the "Paid Space" is taken up first.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				<!-- The Basics -->
-				<section>
-					<section>
-						<!--<p><small class="talk-section-header">The Basics</small></p>-->
+						<p><small class="talk-section-header">Basic Example</small></p>
 						<h2>A Simple Grid</h2>
 
 						<aside class="notes">
@@ -211,17 +82,17 @@
 					<section>
 						<h4>HTML</h4>
 						<pre>
-							<code class="html">
-	<div class="container">
-		<div class="item item1">1</div>
-		<div class="item item2">2</div>
-		<div class="item item3">3</div>
-		<div class="item item4">4</div>
-		<div class="item item5">5</div>
-		<div class="item item6">6</div>
-		<div class="item item7">7</div>
-		<div class="item item8">8</div>
-	</div>
+							<code class="html line-numbers" data-trim>
+<div class="container">
+	<div class="item item1">1</div>
+	<div class="item item2">2</div>
+	<div class="item item3">3</div>
+	<div class="item item4">4</div>
+	<div class="item item5">5</div>
+	<div class="item item6">6</div>
+	<div class="item item7">7</div>
+	<div class="item item8">8</div>
+</div>
 							</code>
 						</pre>
 
@@ -235,10 +106,10 @@
 					<section>
 						<h4>CSS</h4>
 						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-	}
+							<code class="css line-numbers" data-trim >
+.container {
+	display: grid;
+}
 							</code>
 						</pre>
 
@@ -273,13 +144,13 @@
 					<section>
 						<h4>CSS</h4>
 						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-template-rows: 200px 200px;
-		grid-gap: 20px;
-	}
+							<code class="css line-numbers" data-trim>
+.container {
+	display: grid;
+	grid-template-columns: 200px 200px 200px 200px;
+	grid-template-rows: 200px 200px;
+	grid-gap: 20px;
+}
 							</code>
 						</pre>
 
@@ -304,6 +175,105 @@
 						</aside>
 					</section>
 				</section>
+				<!-- New Units and Notations -->
+				<section>
+					<section>
+						<p><small class="talk-section-header">FR and repeat()</small></p>
+						<h2>New Units and Notations</h2>
+
+						<aside class="notes">
+							<ul>
+								<li>Along with CSS Grid Layout, comes a couple of really helpful new units and notations:</li>
+								<li>The FR Unit and the repeat() function.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>The FR Unit</h4>
+
+						<pre>
+							<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: 1fr 1fr 1fr 1fr;</mark>
+	grid-gap: 20px;
+}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>Fr is a new unit of length, which is short for “fraction” or "fractal unit".</li>
+								<li>MDN defines it as a unit which represents a fraction of the available space in the grid container.</li>
+								<li>In this example, we've re-written the `grid-template-colums` to use the fr unit instead of absolute pixel units (which aren't very flexible in this case).</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>The repeat() Function</h4>
+
+						<pre>
+							<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: repeat(4, 1fr);</mark>
+	grid-gap: 20px;
+}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>We can improve on this further with the repeat() notation.</li>
+								<li>Instead of repeating the same value over and over, we are now wrapping that value in repeat().</li>
+								<li>The second value of repeat() is the value that you want repeated.</li>
+								<li>The first value of repeat() is the number of times you want to repeat that value.</li>
+								<li>This allows a recurring pattern to be written in a more compact form, as you see here.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>Result</h4>
+						<img src="images/fr-and-repeat.png" alt="Fr and Repeat">
+
+						<aside class="notes">
+							<ul>
+								<li>Now that we've replaced the pixel values with a more flexible `fr` unit, we see that the grid items now take up the full width of the container.</li>
+								<li>What's happeining here is the `fr` units are telling the grid to fill in all of the available space with 4 evenly spaced columns.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>Mixing Units</h4>
+
+						<pre>
+							<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: repeat(2, 150px) 1fr;</mark>
+	grid-gap: 20px;
+}
+							</code>
+						</pre>
+
+						<aside class="notes">
+							<ul>
+								<li>You don't have to stick with one measurement unit for your track definitions.</li>
+								<li>You can, for example, mix pixels with the fr unit, like you see here. This can be handy if you want to have part of your grid take up a set amount of space and the rest of the grid to flex around it.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h4>Result</h4>
+						<img src="images/mixing-units.png" alt="Mixing Units">
+
+						<aside class="notes">
+							<ul>
+								<li>The way this is calculated is the pixel values (the set/absolute space) are calculated first and then the items using `fr` are divided up with the remaining space. Another way to look at it is to think of `fr` as "Free Space", where the "Paid Space" is taken up first.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
 				<!-- Placing Grid Items -->
 				<section>
 					<section>
@@ -318,60 +288,47 @@
 							</ul>
 						</aside>
 					</section>
-					<section>
+					<section class="split">
 						<h4>Standard Approach</h4>
 	
 						<pre>
-							<code class="css full-height">
-	.item1 {
-		grid-column-start: 1;
-		grid-column-end: 3;
-		grid-row-start: 1;
-		grid-row-end: 3;
-	}
-	.item8 {
-		grid-column-start: 3;
-		grid-column-end: 5;
-	}
-	.item10 {
-		grid-column-start: 1;
-		grid-column-end: 2;
-		grid-row-start: 3;
-		grid-row-end: 4;
-	}
+							<code class="css full-height line-numbers" data-trim >
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.item10 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+							</code>
+						</pre>
+
+						<h4>Shorthand Poperty</h4>
+	
+						<pre>
+							<code class="css line-numbers" data-trim>
+.item1 {
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+}
+.item10 {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
 							</code>
 						</pre>
 
 						<aside class="notes">
 							<ul>
 								<li>Using the same container markup and styles from our previous examples (just adding a few additional items), we can start to target individual grid items for more fine-grained control over a more complex grid layout.</li>
-								<li>Here, we're setting specific start and end positions for grid items #1 and #8 to span them across multiple rows and columns.</li>
+								<li>Here, we're setting specific start and end positions for grid item #1 to span them across multiple rows and columns.</li>
 								<li>Additionally, we're moving the position of item #10 to item #6.</li>
 								<li>The items we don't position will attempt to fill in and span their default height and width.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Shorthand Poperty</h4>
-	
-						<pre>
-							<code class="css">
-	.item1 {
-		grid-column: 1 / 3;
-		grid-row: 1 / 3;
-	}
-	.item8 {
-		grid-column: 3 / 5;
-	}
-	.item10 {
-		grid-column: 1 / 2;
-		grid-row: 3 / 4;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
 								<li>Here's the shorthand property where the first number in each rule represents the starting point and the last number represents the end point.</li>
 							</ul>
 						</aside>
@@ -400,18 +357,29 @@
 							</ul>
 						</aside>
 					</section>
+					<section class="split">
+						<h4>The Plan</h4>
+						<img src="images/grid-areas.png" alt="Grid Areas">
+
+						<aside class="notes">
+							<ul>
+								<li>And just like that, we have a basic page layout.</li>
+								<li>You may have noticed I mixed pixel and fr units to keep some of the elements locked in at a set height or width.</li>
+								<li>The sidebar, for example, will stay at a fixed 200px width, while the content area will expand and take up the rest of the remaining space in the container.</li>
+							</ul>
+						</aside>
+					</section>
 					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
 						<h4>HTML</h4>
 
 						<pre>
-							<code class="html">
-	<div class="container">
-		<header>Header</header>
-		<aside>Sidebar</aside>
-		<div class="content">Content Area</div>
-		<footer>Footer</footer>
-	</div>
+							<code class="html line-numbers" data-trim>
+<div class="container">
+	<header>Header</header>
+	<aside>Sidebar</aside>
+	<div class="content">Content Area</div>
+	<footer>Footer</footer>
+</div>
 							</code>
 						</pre>
 
@@ -421,23 +389,39 @@
 							</ul>
 						</aside>
 					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
+					<section class="split">
 						<h4>CSS</h4>
 
 						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-gap: 1.25rem;
-		grid-template-columns: 200px 1fr;
-		grid-template-rows: 150px 1fr 100px;
-		grid-template-areas:
-			"header header"
-			"sidebar content"
-			"footer footer"
-		height: 75vh;
-	}
+							<code class="css line-numbers" data-trim>
+.container {
+	display: grid;
+	grid-gap: 1.25rem;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 150px 1fr 100px;
+	grid-template-areas:
+		"header header"
+		"sidebar content"
+		"footer footer"
+	height: 75vh;
+}
+							</code>
+						</pre>
+
+						<pre>
+							<code class="css line-numbers" data-trim>
+header {
+	grid-area: header;
+}
+aside {
+	grid-area: sidebar;
+}
+.content {
+	grid-area: content;
+}
+footer {
+	grid-area: footer;
+}
 							</code>
 						</pre>
 
@@ -448,29 +432,7 @@
 							</ul>
 						</aside>
 					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>CSS (continued)</h4>
-
-						<pre>
-							<code class="css">
-	header {
-		grid-area: header;
-	}
-	aside {
-		grid-area: sidebar;
-	}
-	.content {
-		grid-area: content;
-	}
-	footer {
-		grid-area: footer;
-	}
-							</code>
-						</pre>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
+					<section class="split">
 						<h4>Result</h4>
 						<img src="images/grid-areas.png" alt="Grid Areas">
 
@@ -497,25 +459,24 @@
 						</aside>
 					</section>
 					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
 						<h4>CSS</h4>
 
 						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-gap: 1.25rem;
-		grid-template-columns:
-			[container-start sidebar-start] 200px
-			[sidebar-end content-start] 1fr
-			[content-end container-end];
-		grid-template-rows:
-			[header-start] 150px
-			[main-start] 1fr
-			[footer-start] 100px
-			[footer-end];
-		height: 75vh;
-	}
+							<code class="css line-numbers" data-trim>
+.container {
+	display: grid;
+	grid-gap: 1.25rem;
+	grid-template-columns:
+		[container-start sidebar-start] 200px
+		[sidebar-end content-start] 1fr
+		[content-end container-end];
+	grid-template-rows:
+		[header-start] 150px
+		[main-start] 1fr
+		[footer-start] 100px
+		[footer-end];
+	height: 75vh;
+}
 							</code>
 						</pre>
 
@@ -527,27 +488,26 @@
 						</aside>
 					</section>
 					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
 						<h4>CSS (continued)</h4>
 
 						<pre>
-							<code class="css">
-	header {
-		grid-column: container-start / container-end;
-		grid-row: header-start / main-start;
-	}
-	aside {
-		grid-column: sidebar-start / sidebar-end;
-		grid-row: main-start / footer-start;
-	}
-	.content {
-		grid-column: content-start / content-end;
-		grid-row: main-start / footer-start;
-	}
-	footer {
-		grid-column: container-start / container-end;
-		grid-row: footer-start / footer-end;
-	}
+							<code class="css line-numbers" data-trim>
+header {
+	grid-column: container-start / container-end;
+	grid-row: header-start / main-start;
+}
+aside {
+	grid-column: sidebar-start / sidebar-end;
+	grid-row: main-start / footer-start;
+}
+.content {
+	grid-column: content-start / content-end;
+	grid-row: main-start / footer-start;
+}
+footer {
+	grid-column: container-start / container-end;
+	grid-row: footer-start / footer-end;
+}
 							</code>
 						</pre>
 
@@ -559,7 +519,6 @@
 						</aside>
 					</section>
 					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
 						<h4>Result</h4>
 						<img src="images/grid-areas.png" alt="Grid Areas">
 
@@ -610,16 +569,17 @@
 						</aside>
 					</section>
 				</section>
+				<!-- Browser Compatibility -->
 				<!-- References / Resources -->
 				<section>
 					<h2>References / Resources</h2>
 					<ul>
-						<li>Rachel Andrew / @rachelandrew</li>
-						<li>Jen Simmons / @jensimmons</li>
+						<li>Rachel Andrew / @rachelandrew / gridbyexample.com</li>
+						<li>Jen Simmons / @jensimmons / labs.jensimmons.com</li>
 						<li>A Book Apart - The New CSS Layout, by Rachel Andrew</li>
 						<li>CSS Tricks A Complete Guide to Grid</li>
 						<li>MDN Docs</li>
-						<li>Mozilla Developer Playground on GitHub Pages</li>
+						<li>Mozilla Developer Playground</li>
 						<li>Wes Bos's video course on CSS Grid</li>
 					</ul>
 				</section>
@@ -647,11 +607,12 @@
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } }
+					{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } },
+					{ src: 'plugin/line-numbers/line-numbers.js', async: false }
 				]
 			});
 			// Shows the slide number using default formatting
-			// Reveal.configure({ slideNumber: true });
+			Reveal.configure({ slideNumber: true });
 			// Shows the slide number using total slides
 			// Reveal.configure({ slideNumber: 'c/t' });
 		</script>
