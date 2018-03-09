@@ -68,112 +68,11 @@
 				</section>
 				<!-- Basic Example -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Basic Example</small></p>
-						<h2>A Simple Grid</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Now that we've touched on what CSS Grid is, let's go over a basic example to see it in action.</li>
-								<li>Then we'll move on and cover some of the key terminology before digging any deeper.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>HTML</h4>
-						<pre>
-							<code class="html line-numbers" data-trim>
-<div class="container">
-	<div class="item item1">1</div>
-	<div class="item item2">2</div>
-	<div class="item item3">3</div>
-	<div class="item item4">4</div>
-	<div class="item item5">5</div>
-	<div class="item item6">6</div>
-	<div class="item item7">7</div>
-	<div class="item item8">8</div>
-</div>
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>This is the markup we'll be using. Nothing special just a container div with a set of child div elements.</li>
-								<li>Note that your markup does not need to be written this way, I just did so for the sake of simplicity.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css line-numbers" data-trim >
-.container {
-	display: grid;
-}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we're setting the outer div element as the grid container by simply setting it's `display` property to "grid".</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-
-						<img src="images/simple-grid-01.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Now, all of the child "div" elements are "grid items" of the container.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<img src="images/rick-and-morty-unimpressed.gif" alt="Unimpressed">
-
-						<aside class="notes">
-							<ul>
-								<li>OK, not that impressive just yet.</li>
-								<li>That's because simply setting `display: grid;` on a container doesn't do much in and of itself. You still need to slice up the container into columns and rows, as we previously discussed in the last section.</li>
-								<li>So let's do that.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css line-numbers" data-trim>
-.container {
-	display: grid;
-	grid-template-columns: 200px 200px 200px 200px;
-	grid-template-rows: 200px 200px;
-	grid-gap: 20px;
-}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we've set up 4 columns of 200px wide and 2 rows of 200px in height.</li>
-								<li>We've set the space between our rows and columns to be 20px, with the `grid-gap` rule.</li>
-								<li>We'll cover more on these terms a bit later - for now, just note that we're setting these definitions all on the parent container - we've not touched the child elements at all.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/simple-grid-02.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Much better. And not too bad for just 4 lines of CSS!</li>
-								<li>But thre's still room for improvement. For example, how do we get the items to take up the full space? Calculate percentages?</li>
-								<li>First let's cover some key terminology of the specification</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/basic-example/index.html"> </section>
+					<section data-external="slides/basic-example/markup.html"> </section>
+					<section data-external="slides/basic-example/styles-result.html"> </section>
+					<section data-external="slides/basic-example/unimpressed.html"> </section>
+					<section class="split" data-external="slides/basic-example/styles-revised.html"> </section>
 				</section>
 				<!-- New Units and Notations -->
 				<section>
