@@ -1,0 +1,29 @@
+<h4>CSS (continued)</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+header {
+	grid-column: container-start / container-end;
+	grid-row: header-start / main-start;
+}
+aside {
+	grid-column: sidebar-start / sidebar-end;
+	grid-row: main-start / footer-start;
+}
+.content {
+	grid-column: content-start / content-end;
+	grid-row: main-start / footer-start;
+}
+footer {
+	grid-column: container-start / container-end;
+	grid-row: footer-start / footer-end;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>Now, we can use our pre-defined line names when placing items, instead of the line numbers.</li>
+		<li>To name a grid line, we need to provide the name in square brackets.</li>
+	</ul>
+</aside>

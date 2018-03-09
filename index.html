@@ -98,90 +98,6 @@
 					<section class="split" data-external="slides/template-areas/result.html"> </section>
 				</section>
 				<!-- Naming Lines -->
-				<section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part III</small></p>
-						<h2>Naming Lines</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-
-						<pre>
-							<code class="css line-numbers" data-trim>
-.container {
-	display: grid;
-	grid-gap: 1.25rem;
-	grid-template-columns:
-		[container-start sidebar-start] 200px
-		[sidebar-end content-start] 1fr
-		[content-end container-end];
-	grid-template-rows:
-		[header-start] 150px
-		[main-start] 1fr
-		[footer-start] 100px
-		[footer-end];
-	height: 75vh;
-}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>With the same markup we used in the previous example, we can name our lines when defining our grid - allowing us to use those names instead of grid lines.</li>
-								<li>To name a grid line, we need to provide the name in square brackets.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS (continued)</h4>
-
-						<pre>
-							<code class="css line-numbers" data-trim>
-header {
-	grid-column: container-start / container-end;
-	grid-row: header-start / main-start;
-}
-aside {
-	grid-column: sidebar-start / sidebar-end;
-	grid-row: main-start / footer-start;
-}
-.content {
-	grid-column: content-start / content-end;
-	grid-row: main-start / footer-start;
-}
-footer {
-	grid-column: container-start / container-end;
-	grid-row: footer-start / footer-end;
-}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Now, we can use our pre-defined line names when placing items, instead of the line numbers.</li>
-								<li>To name a grid line, we need to provide the name in square brackets.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/grid-areas.png" alt="Grid Areas">
-
-						<aside class="notes">
-							<ul>
-								<li>The result is the same as the Grid Area example.</li>
-								<li>Here we're spanning our items across named lines, as opposed to directly placing items in pre-defined areas.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
 				<!-- Dev Tools -->
 				<section>
 					<section>
@@ -221,7 +137,7 @@ footer {
 						</aside>
 					</section>
 				</section>
-				<!-- Browser Compatibility -->
+				<!-- Browser Compatibility & Fallbacks -->
 				<!-- References / Resources -->
 				<section>
 					<h2>References / Resources</h2>
