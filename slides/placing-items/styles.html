@@ -1,0 +1,43 @@
+<h4>Standard Approach</h4>
+
+<pre>
+	<code class="css full-height line-numbers" data-trim >
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.item10 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+	</code>
+</pre>
+
+<h4>Shorthand Poperty</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+.item1 {
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+}
+.item10 {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>Using the same container markup and styles from our previous examples (just adding a few additional items), we can start to target individual grid items for more fine-grained control over a more complex grid layout.</li>
+		<li>Here, we're setting specific start and end positions for grid item #1 to span them across multiple rows and columns.</li>
+		<li>Additionally, we're moving the position of item #10 to item #6.</li>
+		<li>The items we don't position will attempt to fill in and span their default height and width.</li>
+		<li>Here's the shorthand property where the first number in each rule represents the starting point and the last number represents the end point.</li>
+	</ul>
+</aside>

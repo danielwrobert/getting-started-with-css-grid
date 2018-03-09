@@ -82,79 +82,12 @@
 					<section data-external="slides/new-units/result.html"> </section>
 					<section data-external="slides/new-units/mixing-units.html"> </section>
 					<section data-external="slides/new-units/mixing-units-result.html"> </section>
-					<section>
-					</section>
 				</section>
 				<!-- Placing Grid Items -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics</small></p>
-						<h2>Placing Grid Items</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Now that we've covered the basics and a bunch of terminology, let's start placing some of our items on the grid.</li>
-								<li>By default, each item in a grid will be placed automatically in the default order.</li>
-								<li>If we want to customize our grid beyond that default layout, we can position our items anywhere on the grid using line numbers.</li>
-							</ul>
-						</aside>
-					</section>
-					<section class="split">
-						<h4>Standard Approach</h4>
-	
-						<pre>
-							<code class="css full-height line-numbers" data-trim >
-.item1 {
-	grid-column-start: 1;
-	grid-column-end: 3;
-	grid-row-start: 1;
-	grid-row-end: 3;
-}
-.item10 {
-	grid-column-start: 1;
-	grid-column-end: 2;
-	grid-row-start: 3;
-	grid-row-end: 4;
-}
-							</code>
-						</pre>
-
-						<h4>Shorthand Poperty</h4>
-	
-						<pre>
-							<code class="css line-numbers" data-trim>
-.item1 {
-	grid-column: 1 / 3;
-	grid-row: 1 / 3;
-}
-.item10 {
-	grid-column: 1 / 2;
-	grid-row: 3 / 4;
-}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Using the same container markup and styles from our previous examples (just adding a few additional items), we can start to target individual grid items for more fine-grained control over a more complex grid layout.</li>
-								<li>Here, we're setting specific start and end positions for grid item #1 to span them across multiple rows and columns.</li>
-								<li>Additionally, we're moving the position of item #10 to item #6.</li>
-								<li>The items we don't position will attempt to fill in and span their default height and width.</li>
-								<li>Here's the shorthand property where the first number in each rule represents the starting point and the last number represents the end point.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/placing-grid-items.png" alt="Placing Grid Items">
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the resulting output.</li>
-								<li>You can see item #1 spans across 2 rows and 2 colums, item #7 spans two rows, and item #10 is in position #6.</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/placing-items/index.html"> </section>
+					<section class="split" data-external="slides/placing-items/styles.html"> </section>
+					<section data-external="slides/placing-items/result.html"> </section>
 				</section>
 				<!-- Grid Template Areas -->
 				<section>
