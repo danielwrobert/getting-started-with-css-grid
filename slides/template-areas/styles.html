@@ -1,0 +1,41 @@
+<h4>CSS</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+.container {
+	display: grid;
+	grid-gap: 1.25rem;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 150px 1fr 100px;
+	grid-template-areas:
+		"header header"
+		"sidebar content"
+		"footer footer"
+	height: 75vh;
+}
+	</code>
+</pre>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+header {
+	grid-area: header;
+}
+aside {
+	grid-area: sidebar;
+}
+.content {
+	grid-area: content;
+}
+footer {
+	grid-area: footer;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>This block of CSS is pretty similar to the code in our previous examples, with the main exception of the `grid-template-areas`.</li>
+		<li>Instead of placing each grid item individually, we can define the entire layout with this property and then assign the areas to each item using the `grid-area` property.</li>
+	</ul>
+</aside>
