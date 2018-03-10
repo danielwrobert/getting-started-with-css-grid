@@ -1,0 +1,22 @@
+<h4>Mixing Units</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: repeat(2, 150px) 1fr;</mark>
+	grid-gap: 15px;
+}
+	</code>
+</pre>
+
+<h4>Result</h4>
+<img src="images/mixing-units.png" alt="Mixing Units">
+
+<aside class="notes">
+	<ul>
+		<li>You don't have to stick with one measurement unit for your track definitions.</li>
+		<li>You can, for example, mix pixels with the fr unit, like you see here. This can be handy if you want to have part of your grid take up a set amount of space and the rest of the grid to flex around it.</li>
+		<li>The way this is calculated is the pixel values (the set/absolute space) are calculated first and then the items using `fr` are divided up with the remaining space. Another way to look at it is to think of `fr` as "Free Space", where the "Paid Space" is taken up first.</li>
+	</ul>
+</aside>

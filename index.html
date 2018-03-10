@@ -28,735 +28,110 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
+				<!-- Welcome -->
 				<section>
 					<h2>Getting Started with CSS Grid</h2>
 					<p><small>Dan Robert / @danielwrobert</small></p>
 				</section>
+
 				<!-- Introduction -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Introduction</small></p>
-						<h2>What is CSS Grid Layout?</h2>
-
-						<aside class="notes">
-							<p>CSS Grid is a specification that allows you to create 2-dimensional layouts in CSS, meaning that you have control over both columns and rows.</p>
-						</aside>
-					</section>
-					<section>
-						<img src="images/grid-basics.png" alt="A grid">
-
-						<aside class="notes">
-							<ul>
-								<li>The idea behind a grid is that you take an element on your page and set it as the "grid container".</li>
-								<li>From there, you can slice up that container's contents into actual grid areas.</li>
-								<li>Once you have your grid set and sliced, you can take the "grid items" (children elements to the container) and place them anywhere in the grid using the areas you've defined.</li>
-								<li>You can do this without any need for positioning rules that we needed to rely on in the past (top, bottom, right, left, absolute, etc.).</li>
-								<li>Much like Flexbox, the whole concept behind CSS Grid is all about the relationship between the container and the items.</li>
-								<li>When you set an element to `display: grid;`, you automatically make all of it's direct children "grid items" of that container. The children items are not explicitly set as grid items - there is no `display: grid-item;` rule. This just happens automatically when the direct parent is set to `display: grid;`.</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/introduction/index.html"> </section>
+					<section data-external="slides/introduction/grid-example.html"> </section>
 				</section>
-				<!-- The Basics -->
+
+				<!-- Terminology -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">The Basics</small></p>
-						<h2>A Simple Grid</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Now that we've touched on what CSS Grid is, let's go over a basic example to see it in action.</li>
-								<li>Then we'll move on and cover some of the key terminology before digging any deeper.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>HTML</h4>
-						<pre>
-							<code class="html">
-	<div class="container">
-		<div class="item item1">1</div>
-		<div class="item item2">2</div>
-		<div class="item item3">3</div>
-		<div class="item item4">4</div>
-		<div class="item item5">5</div>
-		<div class="item item6">6</div>
-		<div class="item item7">7</div>
-		<div class="item item8">8</div>
-	</div>
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>This is the markup we'll be using. Nothing special just a container div with a set of child div elements.</li>
-								<li>Note that your markup does not need to be written this way, I just did so for the sake of simplicity.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we're setting the outer div element as the grid container by simply setting it's `display` property to "grid".</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-
-						<img src="images/simple-grid-01.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Now, all of the child "div" elements are "grid items" of the container.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<img src="images/rick-and-morty-unimpressed.gif" alt="Unimpressed">
-
-						<aside class="notes">
-							<ul>
-								<li>OK, not that impressive just yet.</li>
-								<li>That's because simply setting `display: grid;` on a container doesn't do much in and of itself. You still need to slice up the container into columns and rows, as we previously discussed in the last section.</li>
-								<li>So let's do that.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>CSS</h4>
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-template-rows: 200px 200px;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here, we've set up 4 columns of 200px wide and 2 rows of 200px in height.</li>
-								<li>We've set the space between our rows and columns to be 20px, with the `grid-gap` rule.</li>
-								<li>We'll cover more on these terms a bit later - for now, just note that we're setting these definitions all on the parent container - we've not touched the child elements at all.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/simple-grid-02.png" alt="A simple grid">
-
-						<aside class="notes">
-							<ul>
-								<li>Much better. And not too bad for just 4 lines of CSS!</li>
-								<li>But thre's still room for improvement. For example, how do we get the items to take up the full space? Calculate percentages?</li>
-								<li>First let's cover some key terminology of the specification</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/terminology/index.html"> </section>
+					<section data-external="slides/terminology/grid-container.html"> </section>
+					<section data-external="slides/terminology/grid-item.html"> </section>
+					<section data-external="slides/terminology/grid-lines.html"> </section>
+					<section data-external="slides/terminology/grid-tracks.html"> </section>
+					<section data-external="slides/terminology/grid-gutter.html"> </section>
+					<section data-external="slides/terminology/grid-area.html"> </section>
+					<section data-external="slides/terminology/implicit-explicit-markup.html"> </section>
+					<section class="split" data-external="slides/terminology/implicit-explicit.html"> </section>
 				</section>
-				<!-- Digging A Little Deeper -->
-				<section>
-					<section>
-						<p><small class="talk-section-header">Digging A Little Deeper</small></p>
-						<h2>Key Concepts and Terminology</h2>
 
-						<aside class="notes">
-							<ul>
-								<li>The first couple of terms we'll have touched on in our intro but I'll mention them again as a bit of a recap.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Container</h4>
-						<img src="images/terminology/grid-container.jpg" alt="Grid Container">
-
-						<aside class="notes">
-							<ul>
-								<li>A "grid container" is the element that holds the entire CSS grid</li>
-								<li>It will be the element that has been set to `display: grid` or `display: inline-grid`.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Item</h4>
-						<img src="images/terminology/grid-item.jpg" alt="Grid Item">
-
-						<aside class="notes">
-							<ul>
-								<li>A "grid item" any element that is a direct child of a "grid container".</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Lines</h4>
-						<img src="images/terminology/grid-lines.jpg" alt="Grid Lines">
-
-						<aside class="notes">
-							<ul>
-								<li>The vertical and horizontal lines that divide the grid and separate the columns and rows.</li>
-								<li>Grid lines are numbered left to right and top to bottom.</li>
-								<li>They respect the language direction, so if you're coming from an RLT language, they will also be numbered accordingly.</li>
-								<li>Tracks are not numbered by the actual column itself, but by the lines that start and stop them. Because of that, you'll always have one more line number than you actually have column or row.'</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Tracks</h4>
-						<img src="images/terminology/grid-tracks.jpg" alt="Grid Tracks">
-
-						<aside class="notes">
-							<ul>
-								<li>The space between two grid lines.</li>
-								<li>The vertical tracks are referred to as grid columns and are defined useing the `grid-template-columns` property.</li>
-								<li>The horizontal tracks are referred to as grid rows and are defined useing the `grid-template-rows` property.</li>
-								<li>The two are collectively referred to as grid tracks.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Gutter</h4>
-						<img src="images/terminology/grid-gutter.jpg" alt="Grid Gutter">
-
-						<aside class="notes">
-							<ul>
-								<li>The space between the rows and columns in a grid.</li>
-								<li>You can space out your grid by creating gutters with the `grid-gap` property.</li>
-								<li>Setting `grid-gap: 20px`, for example, will add 20px of spacing around your tracks - which is what you saw in the previous example.</li>
-								<li>Similar to margins.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Area</h4>
-						<img src="images/terminology/grid-area.jpg" alt="Grid Area">
-
-						<aside class="notes">
-							<ul>
-								<li>Rectangular space surrounded by four grid lines.</li>
-								<li>A grid area can contain any number of grid cells/items.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Implicit vs Explicit Tracks</h4>
-						<div>
-							<pre>
-								<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 200px 200px 200px 200px;
-		grid-gap: 20px;
-	}
-								</code>
-							</pre>
-						</div>
-
-						<aside class="notes">
-							<ul>
-								<li>Understanding how Implicit and Explicit grid/tracks work is a part of the fundamental understanding of CSS Grid.</li>
-								<li>If you do not explicitly define a tracks, they are implicit - meaning that the browser will automatically fill in the remaining items that do not fit in to the defined tracks.</li>
-								<li>In this example, we have explicitly defined our columns but we have not defined the rows, so they will be implicit.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Implicit vs Explicit Tracks</h4>
-						<img src="images/terminology/explicit-vs-implicit.png" alt="Implicit Rows">
-
-						<aside class="notes">
-							<ul>
-								<li>Here you can see our 4 explicitly defined columns.</li>
-								<li>If we did not explicitly define our columns, we would have 1 column and the width would expand to 100% of the container, as you saw in our initial example.</li>
-								<li>Once the defined columns are filled, the browser needs to put the remaining items somewhere so it will wrap them around, respecting the column definition, and fill them in as rows.</li>
-								<li>Even though we did not define any rows, they will be implicitly created.</li>
-								<li>Similarly, if you do define a set of grid rows, the grid extra items will fill themselves in automatically after they take up the space in the rows that have been explicitly defined.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				<!-- New Units and Notations -->
-				<section>
-					<section>
-						<p><small class="talk-section-header">New Units and Notations</small></p>
-						<h2>FR and repeat()</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Along with CSS Grid Layout, comes a couple of really helpful new units and notations:</li>
-								<li>The FR Unit and the repeat() function.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>The FR Unit</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Fr is a new unit of length, which is short for “fraction” or "fractal unit".</li>
-								<li>MDN defines it as a unit which represents a fraction of the available space in the grid container.</li>
-								<li>In this example, we've re-written the `grid-template-colums` to use the fr unit instead of absolute pixel units (which aren't very flexible in this case).</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>The repeat() Function</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>We can improve on this further with the repeat() notation.</li>
-								<li>Instead of repeating the same value over and over, we are now wrapping that value in repeat().</li>
-								<li>The second value of repeat() is the value that you want repeated.</li>
-								<li>The first value of repeat() is the number of times you want to repeat that value.</li>
-								<li>This allows a recurring pattern to be written in a more compact form, as you see here.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<small>Before: Pixel Units</small>
-						<img src="images/simple-grid-02.png" alt="Pixel Units">
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the result from our earlier example where the grid items are not stretching the full-width of the container.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<small>After: Fr and repeat()</small>
-						<img src="images/fr-and-repeat.png" alt="Fr and Repeat">
-
-						<aside class="notes">
-							<ul>
-								<li>After we replace the pixel values with a more flexible `fr` unit, we see that the grid now takes up the full width of the container.</li>
-								<li>What's happeining here is the `fr` units are telling the grid to fill in all of the available space with 4 evenly spaced columns.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Mixing Units</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-template-columns: repeat(2, 150px) 1fr;
-		grid-gap: 20px;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>You don't have to stick with one measurement unit for your track definitions.</li>
-								<li>You can, for example, mix pixels with the fr unit, like you see here. This can be handy if you want to have part of your grid take up a set amount of space and the rest of the grid to flex around it.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/mixing-units.png" alt="Mixing Units">
-
-						<aside class="notes">
-							<ul>
-								<li>The way this is calculated is the pixel values (the set/absolute space) are calculated first and then the items using `fr` are divided up with the remaining space. Another way to look at it is to think of `fr` as "Free Space", where the "Paid Space" is taken up first.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
 				<!-- Properties -->
 				<section>
-					<section>
-						<h2>Properties</h2>
-						<ul>
-							<li>grid-template-columns / grid-template-rows</li>
-							<li>grid-auto-columns / grid-auto-rows</li>
-							<li>grid-column-start / grid-column-end</li>
-							<li>grid-row-start / grid-row-end</li>
-							<li>grid-column / grid-row</li>
-							<li>grid-template-areas</li>
-							<li>grid-area</li>
-							<li>grid-gap</li>
-							<li>grid</li>
-						</ul>
-
-						<aside class="notes">
-							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties:
-									<ol>
-										<li>defines the line names and track sizing functions of the grid columns or rows.</li>
-										<li>specifies the size of an implicitly-created grid column or row track.</li>
-										<li>specifies a grid item’s start and end position, respectively, within the grid column.</li>
-										<li>specifies a grid item’s start and end position, respectively, within the grid row.</li>
-										<li>shorthand properties for grid-column-start / grid-column-end and grid-row-start / grid-row-end specifying a grid item's size and location within the grid row or column.</li>
-										<li>specifies named grid areas.</li>
-										<li>shorthand property for grid-row-start, grid-column-start, grid-row-end and grid-column-end, specifying a grid item’s size and location within the grid row or column.</li>
-										<li>a shorthand property for grid-row-gap and grid-column-gap.</li>
-										<li>a shorthand property that sets all of the explicit and implicit grid properties in a single declaration.</li>
-									</ol>
-								</li>
-							</ul>
-						</aside>
-					</section>
+					<!-- Container Properties -->
+					<section data-external="slides/properties/index.html"> </section>
+					<section data-external="slides/properties/template-columns-rows.html"> </section>
+					<section data-external="slides/properties/auto-columns-rows.html"> </section>
+					<section data-external="slides/properties/grid-gap.html"> </section>
+					<section class="split" data-external="slides/properties/template-areas.html"> </section>
+					<!-- Item Properties -->
+					<section data-external="slides/properties/column-start-end.html"> </section>
+					<section data-external="slides/properties/row-start-end.html"> </section>
 				</section>
+
+				<!-- Basic Example -->
+				<section>
+					<section data-external="slides/basic-example/index.html"> </section>
+					<section data-external="slides/basic-example/markup.html"> </section>
+					<section data-external="slides/basic-example/styles-result.html"> </section>
+					<section data-external="slides/basic-example/unimpressed.html"> </section>
+					<section class="split" data-external="slides/basic-example/styles-revised.html"> </section>
+				</section>
+
+				<!-- New Units and Notations -->
+				<section>
+					<section data-external="slides/new-units/index.html"> </section>
+					<section class="split" data-external="slides/new-units/fr-unit.html"> </section>
+					<section class="split" data-external="slides/new-units/repeat-function.html"> </section>
+					<section class="split" data-external="slides/new-units/mixing-units.html"> </section>
+				</section>
+
 				<!-- Placing Grid Items -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics</small></p>
-						<h2>Placing Grid Items</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>Now that we've covered the basics and a bunch of terminology, let's start placing some of our items on the grid.</li>
-								<li>By default, each item in a grid will be placed automatically in the default order.</li>
-								<li>If we want to customize our grid beyond that default layout, we can position our items anywhere on the grid using line numbers.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Standard Approach</h4>
-	
-						<pre>
-							<code class="css full-height">
-	.item1 {
-		grid-column-start: 1;
-		grid-column-end: 3;
-		grid-row-start: 1;
-		grid-row-end: 3;
-	}
-	.item8 {
-		grid-column-start: 3;
-		grid-column-end: 5;
-	}
-	.item10 {
-		grid-column-start: 1;
-		grid-column-end: 2;
-		grid-row-start: 3;
-		grid-row-end: 4;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Using the same container markup and styles from our previous examples (just adding a few additional items), we can start to target individual grid items for more fine-grained control over a more complex grid layout.</li>
-								<li>Here, we're setting specific start and end positions for grid items #1 and #8 to span them across multiple rows and columns.</li>
-								<li>Additionally, we're moving the position of item #10 to item #6.</li>
-								<li>The items we don't position will attempt to fill in and span their default height and width.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Shorthand Poperty</h4>
-	
-						<pre>
-							<code class="css">
-	.item1 {
-		grid-column: 1 / 3;
-		grid-row: 1 / 3;
-	}
-	.item8 {
-		grid-column: 3 / 5;
-	}
-	.item10 {
-		grid-column: 1 / 2;
-		grid-row: 3 / 4;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the shorthand property where the first number in each rule represents the starting point and the last number represents the end point.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Result</h4>
-						<img src="images/placing-grid-items.png" alt="Placing Grid Items">
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the resulting output.</li>
-								<li>You can see item #1 spans across 2 rows and 2 colums, item #7 spans two rows, and item #10 is in position #6.</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/placing-items/index.html"> </section>
+					<section class="split" data-external="slides/placing-items/example.html"> </section>
+					<section class="split" data-external="slides/placing-items/shorthand.html"> </section>
 				</section>
+
 				<!-- Grid Template Areas -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h2>Grid Template Areas</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>We're not limited to positioning items via line numbers - we can also use named grid areas with the `grid-template-areas` and `grid-area` properties.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>HTML</h4>
-
-						<pre>
-							<code class="html">
-	<div class="container">
-		<header>Header</header>
-		<aside>Sidebar</aside>
-		<div class="content">Content Area</div>
-		<footer>Footer</footer>
-	</div>
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Here's the markup, using a basic page layout with a header, sidebar, content section, and footer.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>CSS</h4>
-
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-gap: 1.25rem;
-		grid-template-columns: 200px 1fr;
-		grid-template-rows: 150px 1fr 100px;
-		grid-template-areas:
-			"header header"
-			"sidebar content"
-			"footer footer"
-		height: 75vh;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>This block of CSS is pretty similar to the code in our previous examples, with the main exception of the `grid-template-areas`.</li>
-								<li>Instead of placing each grid item individually, we can define the entire layout with this property and then assign the areas to each item using the `grid-area` property.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>CSS (continued)</h4>
-
-						<pre>
-							<code class="css">
-	header {
-		grid-area: header;
-	}
-	aside {
-		grid-area: sidebar;
-	}
-	.content {
-		grid-area: content;
-	}
-	footer {
-		grid-area: footer;
-	}
-							</code>
-						</pre>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>Result</h4>
-						<img src="images/grid-areas.png" alt="Grid Areas">
-
-						<aside class="notes">
-							<ul>
-								<li>And just like that, we have a basic page layout.</li>
-								<li>You may have noticed I mixed pixel and fr units to keep some of the elements locked in at a set height or width.</li>
-								<li>The sidebar, for example, will stay at a fixed 200px width, while the content area will expand and take up the rest of the remaining space in the container.</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/template-areas/index.html"> </section>
+					<section class="split" data-external="slides/template-areas/plan.html"> </section>
+					<section data-external="slides/template-areas/markup.html"> </section>
+					<section class="split" data-external="slides/template-areas/styles.html"> </section>
+					<section class="split" data-external="slides/template-areas/result.html"> </section>
 				</section>
-				<!-- Naming Lines -->
-				<section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part III</small></p>
-						<h2>Naming Lines</h2>
 
-						<aside class="notes">
-							<ul>
-								<li>Let's quickly go over a handful of the properties I'll be using in the upcoming examples.</li>
-								<li>I won't be covering ALL of them, for the sake of time, but I think it'll be helpful to touch on some of these key properties.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>CSS</h4>
+				<!-- Naming Lines (Removed) -->
 
-						<pre>
-							<code class="css">
-	.container {
-		display: grid;
-		grid-gap: 1.25rem;
-		grid-template-columns:
-			[container-start sidebar-start] 200px
-			[sidebar-end content-start] 1fr
-			[content-end container-end];
-		grid-template-rows:
-			[header-start] 150px
-			[main-start] 1fr
-			[footer-start] 100px
-			[footer-end];
-		height: 75vh;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>With the same markup we used in the previous example, we can name our lines when defining our grid - allowing us to use those names instead of grid lines.</li>
-								<li>To name a grid line, we need to provide the name in square brackets.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>CSS (continued)</h4>
-
-						<pre>
-							<code class="css">
-	header {
-		grid-column: container-start / container-end;
-		grid-row: header-start / main-start;
-	}
-	aside {
-		grid-column: sidebar-start / sidebar-end;
-		grid-row: main-start / footer-start;
-	}
-	.content {
-		grid-column: content-start / content-end;
-		grid-row: main-start / footer-start;
-	}
-	footer {
-		grid-column: container-start / container-end;
-		grid-row: footer-start / footer-end;
-	}
-							</code>
-						</pre>
-
-						<aside class="notes">
-							<ul>
-								<li>Now, we can use our pre-defined line names when placing items, instead of the line numbers.</li>
-								<li>To name a grid line, we need to provide the name in square brackets.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<p><small class="talk-section-header">Beyond The Basics, Part II</small></p>
-						<h4>Result</h4>
-						<img src="images/grid-areas.png" alt="Grid Areas">
-
-						<aside class="notes">
-							<ul>
-								<li>The result is the same as the Grid Area example.</li>
-								<li>Here we're spanning our items across named lines, as opposed to directly placing items in pre-defined areas.</li>
-							</ul>
-						</aside>
-					</section>
-				</section>
 				<!-- Dev Tools -->
 				<section>
-					<section>
-						<p><small class="talk-section-header">Dev Tools</small></p>
-						<h2>Firefox Developer Edition</h2>
-
-						<aside class="notes">
-							<ul>
-								<li>The last item to cover is dev tools for CSS grid.</li>
-								<li>CSS Grid is hard to visualize because they're made up of columns, rows, traps, and gaps - which aren't actually elements in and of themselves</li>
-								<li>Dev tools are helpful to visualize what is going on.</li>
-								<li>While Chrome's dev tools are getting better here, the best dev tools for CSS Grid right now are in Firefox Developer Edition.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<img src="images/firefox-dev-tools.gif" alt="Firefox DevTools">
-
-						<aside class="notes">
-							<ul>
-								<li>Firefox has a Layout panel that lists all the available CSS Grid containers on the page and includes an overlay to help you visualize the grid itself.</li>
-								<li>You can choose what you want displayed on the overlay, including grid line numbers, area names (which we'll talk about shortly), even the color of the lines.</li>
-							</ul>
-						</aside>
-					</section>
-					<section>
-						<h4>Grid Line Meanings</h4>
-						<img src="images/grid-line-meanings.jpg" alt="Grid Line Meanings">
-
-						<aside class="notes">
-							<ul>
-								<li>The solid line is the start and end of the Explicit Grid</li>
-								<li>The dashed diagonal lines are the Grid Gap</li>
-								<li>The dark, dashed lines represent an Explicit Track</li>
-								<li>Lastly, the lighter dotted lines represent an Implicit Track</li>
-							</ul>
-						</aside>
-					</section>
+					<section data-external="slides/dev-tools/index.html"> </section>
+					<section data-external="slides/dev-tools/dev-tools-demo.html"> </section>
+					<section data-external="slides/dev-tools/line-meanings.html"> </section>
 				</section>
-				<!-- References / Resources -->
+
+				<!-- FAQ -->
 				<section>
-					<h2>References / Resources</h2>
-					<ul>
-						<li>Rachel Andrew / @rachelandrew</li>
-						<li>Jen Simmons / @jensimmons</li>
-						<li>A Book Apart - The New CSS Layout, by Rachel Andrew</li>
-						<li>CSS Tricks A Complete Guide to Grid</li>
-						<li>MDN Docs</li>
-						<li>Mozilla Developer Playground on GitHub Pages</li>
-						<li>Wes Bos's video course on CSS Grid</li>
-					</ul>
+					<section data-external="slides/faq/index.html"> </section>
+					<section data-external="slides/faq/flexbox.html"> </section>
+					<section data-external="slides/faq/flexbox-comparison.html"> </section>
+					<section data-external="slides/faq/tables.html"> </section>
+					<section data-external="slides/faq/tables-comparison.html"> </section>
+					<section data-external="slides/faq/responsive-example.html"> </section>
+					<section class="split" data-external="slides/faq/responsive-example-code.html"> </section>
 				</section>
+
+				<!-- Browser Compatibility & Fallbacks -->
+				<section>
+					<section data-external="slides/browser-support/index.html"> </section>
+					<section data-external="slides/browser-support/caniuse.html"> </section>
+				</section>
+
+				<!-- References / Resources -->
+				<section data-external="slides/resources/index.html"> </section>
+
 				<!-- Thank You -->
 				<section>
-					<section>
-						<h2>Thank You!</h2>
-						<p><small>Dan Robert / @danielwrobert</small></p>
-					</section>
+					<h2>Thank You!</h2>
+					<p><small>Dan Robert / @danielwrobert</small></p>
 				</section>
 			</div>
 		</div>
@@ -774,7 +149,9 @@
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/external/external.js', condition: function() { return !!document.querySelector( '[data-external],[data-external-replace]' ); } },
+					{ src: 'plugin/line-numbers/line-numbers.js', async: false }
 				]
 			});
 			// Shows the slide number using default formatting

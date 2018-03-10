@@ -1,0 +1,23 @@
+<h4>CSS</h4>
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: 200px 200px 200px 200px;</mark>
+	<mark class="line-highlight">grid-template-rows: 200px 200px;</mark>
+	grid-gap: 15px;
+}
+	</code>
+</pre>
+
+<h4>Result</h4>
+<img src="images/simple-grid-02.png" alt="A simple grid">
+
+<aside class="notes">
+	<ul>
+		<li>Here, we've set up 4 columns of 200px wide and 2 rows of 200px in height.</li>
+		<li>We've set the space between our rows and columns to be 15px, with the `grid-gap` rule.</li>
+		<li>The result is much better. And not too bad for just 4 lines of CSS!</li>
+		<li>But thre's still room for improvement. For example, how do we get the items to take up the full space? Calculate percentages?</li>
+	</ul>
+</aside>

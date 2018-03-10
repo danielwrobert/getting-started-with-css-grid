@@ -1,0 +1,27 @@
+<pre>
+	<code class="css full-height line-numbers" data-trim>
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.item9 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+	</code>
+</pre>
+
+<img src="images/placing-grid-items.png" alt="Placing Grid Items">
+
+<aside class="notes">
+	<ul>
+		<li>Using the same container markup and styles from our previous examples (just adding a few additional items), we can start to target individual grid items for fine-grained control over a more complex grid layout.</li>
+		<li>Here, we're setting specific start and end positions for grid item #1 to span across multiple rows and columns.</li>
+		<li>Additionally, we're moving the position of item #9 to the default position of item #6, shifting #6 over one.</li>
+		<li>The items we don't position will attempt to fill in and span their default height and width.</li>
+	</ul>
+</aside>

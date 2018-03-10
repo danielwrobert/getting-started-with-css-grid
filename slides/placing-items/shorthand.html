@@ -1,0 +1,39 @@
+<h4>Standard Approach</h4>
+<pre>
+	<code class="css full-height line-numbers" data-trim>
+.item1 {
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+.item9 {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	grid-row-start: 3;
+	grid-row-end: 4;
+}
+	</code>
+</pre>
+
+<h4>Shorthand Poperty</h4>
+<pre>
+	<code class="css line-numbers" data-trim>
+.item1 {
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+}
+.item9 {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+	</code>
+</pre>
+
+
+<aside class="notes">
+	<ul>
+		<li>Here's the same code from the previous slide, followed by the shorthand property.</li>
+		<li>The first number in each rule represents the starting point and the last number represents the end point.</li>
+	</ul>
+</aside>

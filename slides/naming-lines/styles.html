@@ -1,0 +1,27 @@
+<h4>CSS</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+.container {
+	display: grid;
+	grid-gap: 1.25rem;
+	grid-template-columns:
+		[container-start sidebar-start] 200px
+		[sidebar-end content-start] 1fr
+		[content-end container-end];
+	grid-template-rows:
+		[header-start] 150px
+		[main-start] 1fr
+		[footer-start] 100px
+		[footer-end];
+	height: 75vh;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>With the same markup we used in the previous example, we can name our lines when defining our grid - allowing us to use those names instead of grid lines.</li>
+		<li>To name a grid line, we need to provide the name in square brackets.</li>
+	</ul>
+</aside>

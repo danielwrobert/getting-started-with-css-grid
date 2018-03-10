@@ -1,0 +1,39 @@
+<h4>Container Properties</h4>
+<p><small><code>grid-template-areas</code></small></p>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 175px 1fr 100px;
+	<mark class="line-highlight">grid-template-areas:</mark>
+	<mark class="line-highlight">	"header header"</mark>
+	<mark class="line-highlight">	"content content"</mark>
+	<mark class="line-highlight">	"footer footer";</mark>
+	grid-gap: 15px;
+}
+	</code>
+</pre>
+
+<p><small>Item Property: <code>grid-areas</code></small></p>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.item1 {
+	grid-area: header;
+}
+.item2 {
+	grid-area: content;
+}
+.item3 {
+	grid-area: footer;
+}
+	</code>
+</pre>
+<aside class="notes">
+	<ul>
+		<li>Defines a grid template by referencing the named grid areas that are specified in the `grid-area` property.</li>
+		<li>Just mentioning this now but it should be more clear in a bit when we go over an example.</li>
+	</ul>
+</aside>

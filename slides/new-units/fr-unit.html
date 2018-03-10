@@ -1,0 +1,22 @@
+<h4>The FR Unit</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-template-columns: 1fr 1fr 1fr 1fr;</mark>
+	grid-gap: 15px;
+}
+	</code>
+</pre>
+
+<h4>Result</h4>
+<img src="images/fr-and-repeat.png" alt="Fr and Repeat">
+
+<aside class="notes">
+	<ul>
+		<li>Fr is a new unit of length, which is short for “fraction” or "fractal unit".</li>
+		<li>MDN defines it as a unit which represents a fraction of the available space in the grid container.</li>
+		<li>In this example, we've re-written the `grid-template-colums` to use the fr unit instead of absolute pixel units (which aren't very flexible in this case).</li>
+	</ul>
+</aside>

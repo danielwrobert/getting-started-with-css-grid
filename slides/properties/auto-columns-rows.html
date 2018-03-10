@@ -1,0 +1,21 @@
+<h4>Container Properties</h4>
+<p><small><code>grid-auto-columns</code> <br> <code>grid-auto-rows</code></small></p>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	<mark class="line-highlight">grid-auto-columns: 200px;</mark>
+	<mark class="line-highlight">grid-auto-rows: 175px;</mark>
+	grid-gap: 15px;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>The `grid-auto-columns` property specifies the size of an implicitly-created grid column.</li>
+		<li>While the `grid-auto-rows` property specifies the size of an implicitly-created grid row.</li>
+		<li>So here, we're setting all implicitly-created items to be 200px by 175px.</li>
+	</ul>
+</aside>

@@ -1,0 +1,44 @@
+<h4>CSS</h4>
+
+<pre>
+	<code class="css line-numbers" data-trim data-noescape>
+.container {
+	display: grid;
+	grid-gap: 1.25rem;
+	grid-template-columns: 200px 1fr;
+	grid-template-rows: 150px 1fr 100px;
+	<mark class="line-highlight">grid-template-areas:</mark>
+	<mark class="line-highlight">	"header header"</mark>
+	<mark class="line-highlight">	"sidebar content"</mark>
+	<mark class="line-highlight">	"footer footer";</mark>
+	height: 75vh;
+}
+	</code>
+</pre>
+
+<pre>
+	<code class="css line-numbers" data-trim>
+header {
+	grid-area: header;
+}
+aside {
+	grid-area: sidebar;
+}
+.content {
+	grid-area: content;
+}
+footer {
+	grid-area: footer;
+}
+	</code>
+</pre>
+
+<aside class="notes">
+	<ul>
+		<li>This block of CSS is pretty similar to the code in our previous examples, with the main exception being the `grid-template-areas` property.</li>
+		<li>Instead of placing each grid item individually, we can define the entire layout with this property and then assign the different areas to each item using the `grid-area` property.</li>
+		<li>Repeating the name of a grid area causes the grid item to span across those rows or columns.</li>
+		<li>The number of area names you list out as rows and columns is based on the number of rows and columns defined on that container.</li>
+		<li>You can look at this definition and visualize it as an actual grid.</li>
+	</ul>
+</aside>
