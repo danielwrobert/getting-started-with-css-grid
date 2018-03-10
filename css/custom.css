@@ -26,6 +26,9 @@ body {
 .reveal h6 {
 	color: var(--color-headers);
 }
+.reveal small {
+	vertical-align: middle;
+}
 .reveal pre {
 	box-shadow: none;
 }

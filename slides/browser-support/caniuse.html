@@ -8,7 +8,7 @@
 		<li>In addition, there are a couple of useful things to be aware of when considering fallbacks, if you need them:
 			<ul>
 				<li>Browsers ignore CSS they don’t understand</li>
-				<li>So, if a browser that doesn’t support CSS Grid comes across the a Grid-specific property, it doesn’t know what it is so throws that line away and continues.</li>
+				<li>So, if a browser that doesn’t support CSS Grid comes across the a Grid-specific property, it ignores it and continues on.</li>
 				<li>And with that, the new layout specification knows about old layout</li>
 				<li>This means that if an item is floated or uses the clear property, then becomes a grid item, it will no longer display any floating or clearing behavior.</li>
 				<li>Between these two things, it can be failry simple to implement a fallback for an element that uses CSS Grid - you just need to determine if it's worth the overhead, based on the demographic data of your application.</li>
