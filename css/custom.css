@@ -26,6 +26,9 @@ body {
 .reveal h6 {
 	color: var(--color-headers);
 }
+.reveal a {
+	color: var(--color-highlight);
+}
 .reveal small {
 	vertical-align: middle;
 }
